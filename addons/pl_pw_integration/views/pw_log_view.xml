@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pw_log_tree_view" model="ir.ui.view">
+            <field name="name">pw_log_tree_view</field>
+            <field name="model">pw.log</field>
+            <field name="arch" type="xml">
+                <tree edit="0"
+                        decoration-warning="log_type == 'warning'"
+                        decoration-success="log_type == 'info'"
+                        decoration-danger="log_type == 'error'"
+                >
+                    <field name="log_type"/>
+                    <field name="date"/>
+                    <field name="name"/>
+                    <field name="pw_id"/>
+                    <field name="sale_id" column_invisible="1"/>
+                    <field name="solved" column_invisible="1"/>
+                    <field name="order_json" column_invisible="1"/>
+                    <button name="action_open_order" type="object" string="Open Order"
+                            invisible="solved or log_type == 'info'"/>
+                    <button name="action_solved" type="object" string="Mark as Solved"
+                            invisible="solved or log_type == 'info'"/>
+                    <button name="action_create_order" type="object" string="Re-create Order"
+                            invisible="solved or not order_json"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pw_log_search_view" model="ir.ui.view">
+            <field name="name">pw_log_search_view</field>
+            <field name="model">pw.log</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="sale_id"/>
+                    <filter string="Not Solved" name="not_solved" domain="[('solved','=', False), ('log_type', '!=', 'info')]"/>
+                    <filter string="Error" name="error" domain="[('log_type','=', 'error')]"/>
+                    <filter string="Info" name="info" domain="[('log_type','=', 'info')]"/>
+                    <filter string="Warning" name="warning" domain="[('log_type','=', 'warning')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="pw_log_act_window" model="ir.actions.act_window">
+            <field name="name">PW Log</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pw.log</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no log here.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="PW Log" id="pw_log_menu" parent="sale.menu_sale_config"
+                  action="pw_log_act_window" sequence="90"/>
+
+    </data>
+</odoo>

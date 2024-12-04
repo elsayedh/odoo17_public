@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_class_user,access_partner_class_user,model_partner_class,base.group_user,1,0,0,0
+access_partner_class_manager,access_partner_class_manager,model_partner_class,sales_team.group_sale_manager,1,1,1,1
+
+access_partner_type_user,access_partner_type_user,model_partner_type,base.group_user,1,0,0,0
+access_partner_type_manager,access_partner_type_manager,model_partner_type,sales_team.group_sale_manager,1,1,1,1
+
+access_partner_region_user,access_partner_region_user,model_partner_region,base.group_user,1,0,0,0
+access_partner_region_manager,access_partner_region_manager,model_partner_region,sales_team.group_sale_manager,1,1,1,1

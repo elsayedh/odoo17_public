@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="view_company_form_inh" model="ir.ui.view">
+            <field name="name">view_company_form_inh</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="PW Info">
+                        <group>
+                            <group string="PW Authentication">
+                                <field name="pw_user"/>
+                                <field name="pw_password" password="1"/>
+                                <label for="pw_access_token"/>
+                                <div class="o_row">
+                                    <field name="pw_access_token" password="1" readonly="1" force_save="1"/>
+                                    <button name="action_pw_connect" type="object" string="Connect"
+                                            class="btn-primary"
+                                            invisible="pw_access_token != False"/>
+                                    <button name="action_pw_connect" type="object" string="Re-connect"
+                                            class="btn-primary"
+                                            invisible="pw_access_token == False"/>
+                                </div>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

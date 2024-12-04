@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_view_search_inherit_quotation_inherit" model="ir.ui.view">
+            <field name="name">sale_order_view_search_inherit_quotation_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='sales']" position="after">
+                    <filter string="Duplicated Orders" name="dup_orders" domain="[('dup_orders', '=', 'dup_orders')]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

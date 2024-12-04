@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="odoo_api_token" model="ir.config_parameter">
+            <field name="key">pl_pw_integration.odoo_api_token</field>
+            <field name="value">d67ea4ba-a80a-45c3-aff6-c59cc57daae9</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">view_partner_form_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page name="internal_notes" position="before">
+                    <page string="PW Config">
+                        <group>
+                            <group string="Defaults">
+                                <field name="pw_b2c_customer" invisible="company_type != 'person'"/>
+                                <field name="customer_representative_contact"/>
+                                <field name="pw_b2b_default_customer" invisible="company_type != 'company'"/>
+                            </group>
+                            <group string="Invoicing Policy" invisible="company_type != 'company'">
+                                <field name="pw_invoice_policy" widget="radio" options="{'horizontal': True}"/>
+                                <field name="pw_invoice_frequency"
+                                       invisible="pw_invoice_policy == 'ir'"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="pw_pos_id"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>

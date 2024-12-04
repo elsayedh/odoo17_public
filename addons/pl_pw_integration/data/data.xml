@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.config_parameter" id="pw_login_endpoint">
+            <field name="key">pw_login_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/login.php</field>
+        </record>
+
+
+        <record model="ir.config_parameter" id="pw_invoice_info_all_endpoint">
+            <field name="key">pw_invoice_info_all_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Invoice_Info_ALL.php</field>
+        </record>
+
+
+        <record model="ir.config_parameter" id="pw_invoice_b2c_by_date_endpoint">
+            <field name="key">pw_invoice_b2c_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Selling_transactions_by_date.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_transaction_by_date_endpoint">
+            <field name="key">pw_transaction_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Transaction_By_Date.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_new_balance_by_date_endpoint">
+            <field name="key">pw_new_balance_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Add_Admin_Balance.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_receivables_by_date_endpoint">
+            <field name="key">pw_receivables_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Receivables.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_mdr_transfer_by_date_endpoint">
+            <field name="key">pw_mdr_transfer_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Bank_transfers_from_rep.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_commission_transaction_by_date_endpoint">
+            <field name="key">pw_commission_transaction_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Commission_Transaction_By_Date.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_mada_wallet_profits_by_date_endpoint">
+            <field name="key">pw_mada_wallet_profits_by_date_endpoint</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Mada_wallet_profits_Date.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_order">
+            <field name="key">pw_order</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/Order_List_by_ID.php</field>
+        </record>
+
+        <record model="ir.config_parameter" id="pw_online_order">
+            <field name="key">pw_online_order</field>
+            <field name="value">https://md-2-sa.com/mdsa/API/OnLine_Order.php</field>
+        </record>
+    </data>
+</odoo>

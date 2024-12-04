@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_action_deliver_orders" model="ir.cron">
+            <field name="name">PW: Deliver Orders</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">model.action_deliver_order(date=False,date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+        <record id="ir_cron_action_fetch_pw_b2b_orders" model="ir.cron">
+            <field name="name">PW: Fetch B2B Orders</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_b2b_orders(date=False,date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_b2c_orders" model="ir.cron">
+            <field name="name">PW: Fetch B2C Orders</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">model.action_fetch_pw_b2c_orders(date=False,date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_balanced_transfer_entry" model="ir.cron">
+            <field name="name">PW: Fetch Balanced Transfer Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_balanced_transfer_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_balance_pulled_entry" model="ir.cron">
+            <field name="name">PW: Fetch Balance Pulled Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_balance_pulled_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_visa_balance_entry" model="ir.cron">
+            <field name="name">PW: Fetch Visa Balance Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_visa_balance_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+
+        <record id="ir_cron_action_fetch_pw_hala_transfer_entry" model="ir.cron">
+            <field name="name">PW: Fetch Hala Transfer Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_hala_transfer_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_new_balance" model="ir.cron">
+            <field name="name">PW: Fetch New Balance Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_new_balanced_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_pos_receivables" model="ir.cron">
+            <field name="name">PW: Fetch POS Receivables Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_receivables_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_mdr_transfer" model="ir.cron">
+            <field name="name">PW: Fetch MDR Transfer Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_mdr_transfer_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_commission" model="ir.cron">
+            <field name="name">PW: Fetch Commission Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_commission_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_action_fetch_pw_mada_profits" model="ir.cron">
+            <field name="name">PW: Fetch Mada Profits Entry</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_pw_mada_profits_entries(date=False, date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_auto_periodic_invoice" model="ir.cron">
+            <field name="name">PW: Auto Periodic Invoice</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_auto_periodic_invoice()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_stock_orders" model="ir.cron">
+            <field name="name">PW: Fetch Stock Orders</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model.action_fetch_orders(date=False,date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="ir_cron_stock_online_orders" model="ir.cron">
+            <field name="name">PW: Fetch Stock Online Orders</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_fetch_online_orders(date=False,date_to=False)</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+
+
+        <record id="product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="inside">
+                    <span class="d-inline-block">
+                        <field name="is_digital_product"/>
+                        <label for="is_digital_product"/>
+                    </span>
+                </xpath>
+                <xpath expr="//field[@name='barcode']" position="after">
+                    <field name="delta_code"/>
+                    <field name="item_code"/>
+                    <field name="brand_id"/>
+                    <field name="family_id"/>
+                    <field name="model_id"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="product_details_model_list">
+            <field name="name">product_details_model_list</field>
+            <field name="model">product.model</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_details_family_list">
+            <field name="name">product_details_family_list</field>
+            <field name="model">product.family</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_details_brand_list">
+            <field name="name">product_details_brand_list</field>
+            <field name="model">product.brand</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="product_details_model_action_window">
+            <field name="name">Product Model</field>
+            <field name="res_model">product.model</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="product_details_family_action_window">
+            <field name="name">Product Family</field>
+            <field name="res_model">product.family</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="product_details_brand_action_window">
+            <field name="name">Product Brand</field>
+            <field name="res_model">product.brand</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+        <menuitem name="Product Brand" id="details_brand" parent="stock.menu_product_in_config_stock" sequence="3"
+                  action="product_details_brand_action_window"/>
+        <menuitem name="Product Family" id="details_family" parent="stock.menu_product_in_config_stock" sequence="4"
+                  action="product_details_family_action_window"/>
+        <menuitem name="Product Model" id="details_model" parent="stock.menu_product_in_config_stock" sequence="5"
+                  action="product_details_model_action_window"/>
+
+
+    </data>
+</odoo>

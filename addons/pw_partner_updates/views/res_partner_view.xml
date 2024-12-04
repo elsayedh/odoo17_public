@@ -1,0 +1,80 @@
+<odoo>
+    <data>
+
+
+        <record id="view_partner_form_view" model="ir.ui.view">
+            <field name="name">view_partner_form_view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <group name="accounting_entries" position="inside">
+                    <field name="class_id"/>
+                    <field name="type_id"/>
+                    <field name="region_id"/>
+                </group>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="partner_class_tree_view">
+            <field name="name">partner_class_tree_view</field>
+            <field name="model">partner.class</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="partner_type_tree_view">
+            <field name="name">partner_type_tree_view</field>
+            <field name="model">partner.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="partner_region_tree_view">
+            <field name="name">partner_region_tree_view</field>
+            <field name="model">partner.region</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="partner_class_action_window">
+            <field name="name">Partner Class</field>
+            <field name="res_model">partner.class</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="partner_type_action_window">
+            <field name="name">Partner Type</field>
+            <field name="res_model">partner.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="partner_region_action_window">
+            <field name="name">Partner Region</field>
+            <field name="res_model">partner.region</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+        <menuitem name="Partner Class" id="partner_class_menu" parent="sale.menu_sale_config" sequence="71"
+                  action="partner_class_action_window"/>
+
+        <menuitem name="Partner Type" id="partner_type_menu" parent="sale.menu_sale_config" sequence="72"
+                  action="partner_type_action_window"/>
+
+        <menuitem name="Partner Region" id="partner_region_menu" parent="sale.menu_sale_config" sequence="73"
+                  action="partner_region_action_window"/>
+
+
+    </data>
+</odoo>

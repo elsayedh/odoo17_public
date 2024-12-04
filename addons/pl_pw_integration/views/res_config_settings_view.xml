@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="25"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <app data-string="PW" string="PW" name="pl_pw_integration"
+                         groups="account.group_account_manager">
+                        <block title="PW Default Accounts">
+                            <setting string="New Balanced" title="New Balanced">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="new_balance_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="new_balance_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="new_balance_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="new_balance_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="new_balance_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="new_balance_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Balanced Transfer MDA To MDR" title="Balanced Transfer MDA To MDR">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="balance_trns_rep_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="balance_trns_rep_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_trns_rep_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_trns_rep_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_trns_rep_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_trns_rep_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Balanced Transfer MDR To POS" title="Balanced Transfer MDR To POS">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="balance_trns_pos_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="balance_trns_pos_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_trns_pos_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_trns_pos_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_trns_pos_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_trns_pos_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Balanced Transfer MDA To POS" title="Balanced Transfer MDR To POS">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="balance_trns_mda_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="balance_trns_mda_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_trns_mda_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_trns_mda_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_trns_mda_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_trns_mda_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Balance Pulled MDA To MDA" title="Balance Pulled MDA To MDA">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="balance_pull_mda2mda_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="balance_pull_mda2mda_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_pull_mda2mda_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_pull_mda2mda_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_pull_mda2mda_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_pull_mda2mda_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Balance Pulled POS To MDA" title="Balance Pulled POS To MDA">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="balance_pull_pos2mda_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="balance_pull_pos2mda_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_pull_pos2mda_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_pull_pos2mda_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_pull_pos2mda_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_pull_pos2mda_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Balance Pulled MDR To MDA" title="Balance Pulled MDR To MDA">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="balance_pull_mdr2mda_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="balance_pull_mdr2mda_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_pull_mdr2mda_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_pull_mdr2mda_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="balance_pull_mdr2mda_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="balance_pull_mdr2mda_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Visa Balance" title="Visa Balance">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="visa_balance_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="visa_balance_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="visa_balance_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="visa_balance_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="visa_balance_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="visa_balance_debit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="visa_balance_sec_credit_account_id" string="2nd Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="visa_balance_sec_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="visa_balance_sec_debit_account_id" string="2nd Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="visa_balance_sec_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Commission" title="Commission">
+                                <div class="content-group">
+                                    <span class="text-muted">From commission wallet to operation wallet.</span>
+                                    <div class="row mt8">
+                                        <label for="commission_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="commission_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="commission_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="commission_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="commission_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="commission_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="Hala Transfer" title="Hala Transfer">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="hala_trans_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="hala_trans_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="hala_trans_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="hala_trans_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="hala_trans_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="hala_trans_debit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="hala_trans_sec_credit_account_id" string="2nd Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="hala_trans_sec_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="hala_trans_sec_debit_account_id" string="2nd Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="hala_trans_sec_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="POS Receivables" title="POS Receivables">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="pos_receivables_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="pos_receivables_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="pos_receivables_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="pos_receivables_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="pos_receivables_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="pos_receivables_debit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="pos_receivables_sec_credit_account_id" string="2nd Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="pos_receivables_sec_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="pos_receivables_sec_debit_account_id" string="2nd Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="pos_receivables_sec_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                            <setting string="MDR Transfer" title="MDR Transfer">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="mdr_transfer_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="mdr_transfer_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="mdr_transfer_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="mdr_transfer_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="mdr_transfer_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="mdr_transfer_debit_account_id"/>
+                                        <span class="text-muted">Will use this debit account as a default in case no account
+                                            in chart has the PW account number
+                                        </span>
+                                    </div>
+                                </div>
+                            </setting>
+
+                            <setting string="Mada Profits" title="Mada Profits">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="mada_profit_journal_id" class="col-lg-4 o_light_label"
+                                               string="Journal"/>
+                                        <field name="mada_profit_journal_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="mada_profit_credit_account_id" string="Credit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="mada_profit_credit_account_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="mada_profit_debit_account_id" string="Debit Account"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="mada_profit_debit_account_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                        </block>
+                        <block title="Stock Operation">
+                            <setting string="Operations" title="Operations">
+                                <div class="content-group">
+                                    <div class="row mt8">
+                                        <label for="robo_pw_operation_id" class="col-lg-4 o_light_label"
+                                               string="Robo Operation"/>
+                                        <field name="robo_pw_operation_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="other_operation_id" string="Offline Operation"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="other_operation_id"/>
+                                    </div>
+                                    <div class="row mt8">
+                                        <label for="online_operation_id" string="Online Operation"
+                                               class="col-lg-4 o_light_label"/>
+                                        <field name="online_operation_id"/>
+                                    </div>
+                                </div>
+                            </setting>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
